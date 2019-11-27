@@ -1,0 +1,17 @@
+{
+    "name": "owlcoder/modelgen",
+    "description": "generation models for laravel",
+    "authors": [
+        {
+            "name": "owl",
+            "email": "owlcoder1@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+     "autoload": {
+        "psr-4": {
+            "Owlcoder\\": "src/"
+        }
+    }
+}
