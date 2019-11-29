@@ -42,7 +42,7 @@ class GenerateModels extends Command
             /**
              * Generate model
              */
-            $path = base_path('app/Models/' . $baseClassName . '.php');
+            $path = base_path('app/Models/' . $modelClassName . '.php');
 
             if ( ! file_exists($path)) {
                 $modelClassName = ucfirst(Str::camel($table->getName()));
