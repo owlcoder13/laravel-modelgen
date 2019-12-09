@@ -22,11 +22,12 @@ class GenerateModels extends Command
         /** @var MySqlSchemaManager $schemaManager */
         $schemaManager = \DB::connection()->getDoctrineSchemaManager();
         foreach ($schemaManager->listTables() as $table) {
+            $modelClassName = ucfirst(Str::camel($table->getName()));
 
             /**
              * Generate base model
              */
-            $baseClassName = 'Base' . ucfirst(Str::camel($table->getName()));
+            $baseClassName = 'Base' . $modelClassName;
 
             $baseModelGenerator = new Generator([
                 'table' => $table,
