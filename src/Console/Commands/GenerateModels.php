@@ -38,6 +38,12 @@ class GenerateModels extends Command
 
             $path = base_path('app/Models/Base/' . $baseClassName . '.php');
             $this->output->writeln("generate $path");
+
+            $directory = dirname($path);
+            if(!file_exists($directory)){
+                mkdir($directory, 0777, true);
+            }
+
             file_put_contents($path, $baseModelGenerator->generate());
 
             /**
